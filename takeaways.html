@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { width: 1280px; min-height: 720px; background: #0EA5E9; color: white; display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+    .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px; color: rgba(255,255,255,0.7); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; }
+    .content { flex: 1; display: flex; padding: 60px 80px; gap: 60px; }
+    .summary { flex: 1.2; }
+    .cta { flex: 0.8; background: rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; display: flex; flex-direction: column; justify-content: center; backdrop-filter: blur(10px); }
+    h2 { font-size: 56px; margin-bottom: 40px; }
+    .point { margin-bottom: 30px; display: flex; align-items: flex-start; gap: 15px; }
+    .check { width: 28px; height: 28px; background: white; color: #0EA5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 900; }
+    .point p { font-size: 20px; line-height: 1.4; opacity: 0.9; }
+    .cta h3 { font-size: 24px; margin-bottom: 20px; }
+    .cta-text { font-size: 18px; line-height: 1.6; opacity: 0.9; }
+    .code-mini { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 14px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="content">
+      <div class="summary">
+        <h2>Takeaways</h2>
+        <div class="point">
+          <div class="check">&checkmark;</div>
+          <p><strong>Guaranteed Order:</strong> Essential for any system with prerequisites and linear constraints.</p>
+        </div>
+        <div class="point">
+          <div class="check">&checkmark;</div>
+          <p><strong>Linear Speed:</strong> O(V+E) performance makes it highly scalable for massive real-world graphs.</p>
+        </div>
+        <div class="point">
+          <div class="check">&checkmark;</div>
+          <p><strong>Cycle Detection:</strong> Built-in safety (Kahn's) or simple addition (DFS) to catch invalid inputs.</p>
+        </div>
+      </div>
+      <div class="cta">
+        <h3>Ready to build?</h3>
+        <p class="cta-text">Start with Kahn's Algorithm for most iterative scheduling tasks, or DFS for recursive depth problems.</p>
+        <div class="code-mini">
+          res = []<br>
+          while queue:<br>
+          &nbsp;&nbsp;u = queue.pop(0)<br>
+          &nbsp;&nbsp;res.append(u)<br>
+          &nbsp;&nbsp;...
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Topological Sorting • CS Fundamentals</span>
+      <span>12</span>
+    </div>
+  </div>
+</body>
+</html>

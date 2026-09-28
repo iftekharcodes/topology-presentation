@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F8FAFC; color: #0F172A; display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+    .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px; color: #64748B; border-top: 1px solid #E2E8F0; padding-top: 10px; }
+    .content { flex: 1; display: flex; flex-direction: column; padding: 50px 80px 0 80px; }
+    h2 { font-size: 48px; color: #1E293B; margin-bottom: 40px; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    th { background: #F1F5F9; color: #475569; padding: 20px; text-align: left; font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #E2E8F0; }
+    td { padding: 25px 20px; border-bottom: 1px solid #F1F5F9; font-size: 18px; color: #1E293B; }
+    tr:last-child td { border-bottom: none; }
+    .tag { font-weight: 700; color: #0EA5E9; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="content">
+      <h2>Kahn vs. DFS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Feature</th>
+            <th style="width: 37.5%;">Kahn’s Algorithm</th>
+            <th style="width: 37.5%;">DFS-based Sort</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tag">Core Structure</td>
+            <td>Queue / Iterative</td>
+            <td>Recursion Stack</td>
+          </tr>
+          <tr>
+            <td class="tag">Mental Model</td>
+            <td>"Ready to process"</td>
+            <td>"Waiting to finish"</td>
+          </tr>
+          <tr>
+            <td class="tag">Cycle Detection</td>
+            <td>Implicit (if result &lt; V)</td>
+            <td>Requires explicit check</td>
+          </tr>
+          <tr>
+            <td class="tag">Best For</td>
+            <td>Level-order dependencies</td>
+            <td>Deeply nested dependencies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <span>Topological Sorting • CS Fundamentals</span>
+      <span>08</span>
+    </div>
+  </div>
+</body>
+</html>

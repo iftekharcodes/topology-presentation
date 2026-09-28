@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { width: 1280px; min-height: 720px; background: #FFFFFF; color: #0F172A; display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+    .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px; color: #64748B; border-top: 1px solid #E2E8F0; padding-top: 10px; }
+    .content { flex: 1; display: flex; flex-direction: row; padding: 50px 80px 0 80px; gap: 60px; }
+    .text-side { flex: 1; }
+    .viz-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F8FAFC; border-radius: 20px; margin-bottom: 60px; position: relative; padding: 40px; }
+    h2 { font-size: 48px; color: #1E293B; margin-bottom: 40px; }
+    .term { margin-bottom: 25px; }
+    .term strong { font-size: 20px; color: #0EA5E9; display: block; margin-bottom: 5px; }
+    .term p { font-size: 16px; color: #475569; line-height: 1.5; }
+    
+    .graph-viz { width: 300px; height: 200px; position: relative; }
+    .node { width: 50px; height: 50px; border-radius: 50%; background: white; border: 2px solid #0EA5E9; display: flex; align-items: center; justify-content: center; position: absolute; font-weight: bold; z-index: 2; }
+    .node.source { border-color: #10B981; }
+    .node.sink { border-color: #F59E0B; }
+    .edge { position: absolute; background: #CBD5E1; height: 2px; z-index: 1; transform-origin: left center; }
+    .edge::after { content: ''; position: absolute; right: -5px; top: -4px; border: 5px solid transparent; border-left-color: #CBD5E1; }
+    
+    .caption { margin-top: 30px; font-size: 14px; color: #64748B; text-align: center; }
+    .legend { position: absolute; bottom: 20px; left: 20px; font-size: 12px; display: flex; gap: 15px; }
+    .legend-item { display: flex; align-items: center; gap: 5px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="content">
+      <div class="text-side">
+        <h2>Graph Vocabulary</h2>
+        <div class="term">
+          <strong>Vertex (Node)</strong>
+          <p>Represents an individual task or object in the sequence.</p>
+        </div>
+        <div class="term">
+          <strong>Directed Edge</strong>
+          <p>A link u &rarr; v indicating task u must occur before task v.</p>
+        </div>
+        <div class="term">
+          <strong>DAG</strong>
+          <p>Directed Acyclic Graph. A graph with no cycles—the mandatory requirement for sorting.</p>
+        </div>
+        <div class="term">
+          <strong>Indegree</strong>
+          <p>Number of incoming edges. Nodes with 0 indegree (Sources) have no prerequisites.</p>
+        </div>
+      </div>
+      <div class="viz-side">
+        <div class="graph-viz">
+          <div class="node source" style="top: 0; left: 0;">0</div>
+          <div class="node" style="top: 0; left: 200px;">1</div>
+          <div class="node sink" style="top: 150px; left: 100px;">2</div>
+          <!-- Edges (simplified representation) -->
+          <div class="edge" style="top: 25px; left: 50px; width: 150px;"></div>
+          <div class="edge" style="top: 25px; left: 25px; width: 110px; transform: rotate(56deg);"></div>
+          <div class="edge" style="top: 25px; left: 225px; width: 135px; transform: rotate(126deg);"></div>
+        </div>
+        <p class="caption">Visualizing a simple DAG with Source and Sink</p>
+        <div class="legend">
+          <div class="legend-item"><div class="dot" style="background: #10B981;"></div> Source (In=0)</div>
+          <div class="legend-item"><div class="dot" style="background: #F59E0B;"></div> Sink (Out=0)</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Topological Sorting • CS Fundamentals</span>
+      <span>03</span>
+    </div>
+  </div>
+</body>
+</html>

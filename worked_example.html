@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { width: 1280px; min-height: 720px; background: #FFFFFF; color: #0F172A; display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+    .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px; color: #64748B; border-top: 1px solid #E2E8F0; padding-top: 10px; }
+    .content { flex: 1; display: flex; flex-direction: column; padding: 50px 80px 0 80px; }
+    h2 { font-size: 48px; color: #1E293B; margin-bottom: 40px; }
+    .pipeline { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+    .layer { display: flex; gap: 30px; align-items: center; width: 100%; justify-content: center; }
+    .box { padding: 20px 30px; border: 2px solid #E2E8F0; border-radius: 12px; font-weight: 600; color: #475569; position: relative; min-width: 160px; text-align: center; background: white; }
+    .box.active { border-color: #0EA5E9; color: #0EA5E9; background: #F0F9FF; }
+    .arrow-v { height: 40px; width: 2px; background: #CBD5E1; position: relative; }
+    .arrow-v::after { content: ''; position: absolute; bottom: -5px; left: -4px; border: 5px solid transparent; border-top-color: #CBD5E1; }
+    .step-desc { position: absolute; left: calc(50% + 300px); width: 250px; text-align: left; font-size: 14px; color: #64748B; border-left: 2px solid #0EA5E9; padding-left: 15px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="content">
+      <h2>Worked Example: Build Pipeline</h2>
+      <div class="pipeline">
+        <div class="layer">
+          <div class="box active">Core Lib</div>
+          <div class="box active">Logger</div>
+          <div class="step-desc"><strong>1. Start</strong><br>Independent modules have no dependencies. Built first.</div>
+        </div>
+        <div class="arrow-v"></div>
+        <div class="layer">
+          <div class="box">Database</div>
+          <div class="box">API Layer</div>
+          <div class="step-desc"><strong>2. Resolve</strong><br>Intermediate layers are unlocked once core systems finish.</div>
+        </div>
+        <div class="arrow-v"></div>
+        <div class="layer">
+          <div class="box" style="width: 350px;">Web App</div>
+          <div class="step-desc"><strong>3. Final Integration</strong><br>Requires all underlying layers before compilation.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Topological Sorting • CS Fundamentals</span>
+      <span>10</span>
+    </div>
+  </div>
+</body>
+</html>
